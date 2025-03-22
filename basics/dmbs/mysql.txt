@@ -1,0 +1,78 @@
+-show databases => show db
+-use (name db) => use db
+-create database belajar_database => bikin db
+-show tables => show tabel
+-DROP DATABASE contoh_dataase => delete database
+-CTRL + Enter => munculkan output di workbench Mysql
+-CREATE TABLE barang
+(
+id INT,
+nama VARCHAR(100),
+harga INT,
+jumlah INT
+) ENGINE = InnoDB; => membuat tabel (barang contohnya)
+-SHOW CREATE TABLE barang => untuk melihat struktur tabel barang
+
+-ALTER TABLE barang => merubah struktur tabel yang sudah terlanjur di buat
+/ Penjelasan ALTER TABLE barang /
+-menambah column =>
+ALTER TABLE barang
+ADD COLUMN salah TEXT;
+-menghapus column => 
+ALTER TABLE barang
+DROP COLUMN salah;
+
+-TRUNCATE barang => menghapus semua data dari sebuah tabel tanpa menghapus struktur tabelnya
+-DELETE TABLE barang => menghapus tabel permanen
+-INSERT INTO => untuk memasukan data ke dalam table
+-SELECT * FROM products => untuk mengambil data dari tabel
+-PRIMARY KEY => sebagai identitas yang untuk membedakan setiap record yang ada didalam suatu tabel(harus unik gableh sama)
+-WHERE CLAUSE => untuk memfilter data yang memenuhi kondisi tertentu.
+-UPDATE - SET => untuk mengubah nilai data dalam tabel basis data, termasuk tabel sementara
+
+-DELETE FROM products
+ WHERE id = 'P0012'; => delete baris sebuah product dari table products
+
+-ALIAS (AS) =>  untuk memberikan nama sementara pada tabel atau kolom dalam tabel 
+-AND => kanan kiri harus benar
+-OR => Kanan atau kiri harus benar
+-NULL OPERATOR => IS NULL / IS NOT NULL
+-BETWEEN => untuk mengambil data berdasarkan rentang nilai tertentu, atau jarak tertentu misalnya (WHERE price BETWEEN 100 AND 1000)
+-IN => untuk melakukan beberapa pencarian sebuah kolom dengan beberapa nilai contoh (WHERE category IN ('minuman'))
+-ORDER BY clause => digunakan untuk mengurutkan data berdasarkan kolom yang dipilih, dan jenis urutan (ASC ATAU ESC)
+ASC => dari terendah, DESC => dari tertinggi (default nya ASC)
+-LIMIT => untuk menentukan jumlah record yang akan ditampilkan
+-DISTINCT => menghilangkan baris duplikat dan menampilkan daftar nilai yang unik
+-AUTO_INCREMENT => untuk secara otomatis menghasilkan dan menyediakan nilai unik untuk setiap rekaman yang dimasukkan ke dalam tabel SQL(contohnya id)
+-CONSTRAINT => membatasi nilai yang dapat dimasukkan ke dalam tabel database(biar gak dobel data yang masuk)
+-CHECK => 
+-INDEX => kalau mau cepet insert update delete nya cepet gausah pake index tapi kalo mau query cepet pakai index
+-SHOW CREATE TABLE products => show struktur tabel
+-LIKE => biasa di pakai cari kata (tapi sangat lambat karena cari dari 1 sampai akhir)
+-FOREIGN KEY => untuk melakukan relasi antar TABLE
+-JOIN => untuk SELECT beberapa TABLE bisa pakai JOIN
+-1 to 1 relationship => Misalnya, suatu negara hanya memiliki satu ibu kota, dan satu ibu kota hanya dimiliki oleh satu negara.
+-1 to many relationship => misalnya suatu kategori memiliki banyak product misal kategori minuman ada es teh, aqua, dll
+-many to many relationship => dimana ada relasi antara 2 tabel dimana table pertama bisa punya banyak relasi di table ke dua dan table kedua pun punya banyak relasi di table pertama 
+-JENIS JENIS JOIN =>
+*INNER JOIN = Mengembalikan records yang memiliki nilai yang cocok di kedua tabel (default join) yang ga punya relasi ga nongol
+*LEFT JOIN = mekanisme join smaa kayak inner namun semua data di table pertama akan di ambil
+*RIGHT JOIN = mekanisme join smaa kayak inner namun semua data di table kedua akan di ambil
+*CROSS JOIN = 
+-QUERY = Query adalah perintah untuk meminta informasi dalam sebuah database yang dapat dibuat menggunakan bahasa SQL untuk membuat laporan atau analisis data.
++SET UNION => Operator UNION digunakan untuk menggabungkan kumpulan hasil dari dua SELECT pernyataan atau lebih. kalau duplikat ga di tampilin
++SET UNION ALL => sama kayak union tapi kalau DUPLIKAT ditampilin untuk meningkatkan kinerja dan efesiensi
+-START transaction => memulai proses transaksi, proses selanjutnya di anggap transaksi sampai pertintah ROLLBACK ATU COMMIT
+-COMMIT => Menyimpan secara permanen seluruh proses transaksi
+-ROLLBACK => Membatalakn secara permanen seluruh proses transaksi
+-FOR UPDATE => untuk lock data yang ingin di update
+-DEADLOCK => DEADLOCK adalah situasi ada 2 proses yang saling menunggu satu sama lain. 
+namun data yang di tunggu di lock oleh proses lainnya. seingga proses menunggu nya tidak
+pernah selesai jadi hati hati kalau terlalu banyak gunain FOR UPDATE
+-BEHAVIOR LOCK tables
+*READ => Untuk sesi yang memegang kunci READ, operasi DROP TABLE dan TRUNCATE TABLE tidak diizinkan.
+*WRITE => WRITE dapat melakukan operasi tingkat tabel seperti DROP TABLE atau TRUNCATE TABLE
+-LOCK INSTANCE FOR BACKUP => mencegah file dibuat, diganti nama, atau dihapus . REPAIR TABLE TRUNCATE TABLE, OPTIMIZE TABLE, dan pernyataan manajemen akun diblokir.
+-UNLOCK INSTANCE => melepaskan kunci cadangan yang dipegang oleh sesi saat ini. 
+-BACKUP DB => mysqldump https://www.hostinger.co.id/tutorial/cara-backup-dan-restore-database-dengan-sql-dump
+-RESTORE DB => mysql -u root -p belajar_mysql_import < "C:\Users\lenovo\Desktop\backup\belajar_mysql.sql"

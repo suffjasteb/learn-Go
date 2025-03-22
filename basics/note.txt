@@ -1,0 +1,101 @@
+-Golang di buat oleh Google dengan bahasa pemograman C
+
+-dirilis ke public open source pada 2009
+
+-Go populer sejak di gunakan untuk membuat Docker(cloud) pada tahun 2011
+
+-Docker container. Apa itu?
+Docker adalah platform perangkat lunak populer yang menggunakan virtualisasi sistem operasi untuk memudahkan 
+Anda dalam membangun, menguji, dan men-deploy (menerapkan) aplikasi dengan cepat. Sementara container menyediakan 
+cara untuk mengemas kode, konfigurasi, dan dependensi aplikasi Anda ke dalam satu objek.
+
+-Kubernetes adalah perangkat lunak open-source (sumber terbuka) yang memungkinkan Anda untuk men-deploy (menerapkan) 
+dan mengelola containerized application (aplikasi dalam container) dalam skala besar.
+
+-project di golang biasa disebut sebagai module.
+
+-membuat module => go mod init nama_project
+
+-Go sebenernya mirip C/C++ . dimana perlu ada yang namanya main function
+
+-main function adalah sebuah function yang akan dijalankan ketika progam berjalan
+
+- kata kuci nya func yang berati function
+//
+- untuk menulis tulisan, kita perlu melakukan import module fmt terlebih dahulu.
+
+-cara run kode progam golang => go run hello.go
+
+-di Golang, function dalam module/project adalah unik. artinya kita tidak boleh membuat nama function yang sama.
+
+-Tipe data Number
+Di Go ada 2 jenis tipe data number yaitu int dan floating point
+
+-di Golang ketika kita membuat variable, tapi variable tersebut tidak digunakan otomatis terjadi error
+-contohnya : declared and not used: firstName => artinya variable firstName di deklarasikan namun tidak di gunakan !
+
+-Const => kalo di buat tapi ga di pakai gak error
+-Variable => boleh di ubah
+
+-Array adalah kumpulan data dengan tipe data yang sama
+
+-CLI (Command Line Interface) adalah antarmuka pengguna yang memungkinkan pengguna untuk berinteraksi dengan perangkat lunak melalui perintah yang diketikkan di baris perintah. 
+-Cmd adalah bagian dari CLI
+
+-Break digunakan untuk menghentikan seluruh perulangan.
+-Continue digunakan untuk menghentikan perulangan yang berjalan, dan langsung
+melanjutkan ke perulangan berikutnya.
+
+// function
+-Function Parameter =>
+-Kadang kadang kita butuh data dari luar, atau kita sebut parameter.
+-Jika kita menambahkan parameter di function, maka ketika memanggil function tersebut,
+ kita wajib memasukan data ke parameter
+
+ // number
+-Di Go, tidak ada tipe data number secara langsung. Tipe data yang valid untuk angka
+di Go adalah tipe-tipe seperti int, float64, atau uint, tergantung pada jenis angka yang ingin kamu gunakan.
+-int adalah tipe data untuk bilangan bulat (misalnya 25).
+-float64 adalah tipe data untuk bilangan pecahan (misalnya 25.5).
+
+[]int{} <= slice
+
+di golang function bisa digunakan sebagai parameter dan simpan di variable
+
+-Struct => Go tidak mengadopsi konsep class seperti bahasa oop lainnya, 
+namun Go memiliki tipe data struktur Struct
+-Struct adalah kumpulan definisi variable (atau property) dan atau fungsi (atau method),
+yang di bungkus sebagai tipe data baru dengan nama tertentu.
+-Dari sebuah Struct, kita bisa buat variable baru, yang memiliki atribute sesuai
+skema struct tersebut. konsep struct di Golang mirip konsep class pdada OOP.
+
+/Deklarasi Struct / 
+-kombinasi keyword type dan struct 
+type student struct {
+    name string
+    grade int
+}
+
+func main() {
+    var s1 student
+    s1.name = "Shafwan Junin"
+    s1.grade = 1
+
+    fmt.println("name: ", s1.name)
+}
+
+-interface => interface adalah definisi suatu kumpulan method yang tidak memiliki isi, jadi
+hanya definisi header/schema nya saja.
+/ Penereapan Interface /
+type hitung interface {
+    luas() float64
+    keliling() float64
+}
+-interface ini nantinya digunakan sebagai tipe data pada pada variable
+untuk menampung objek bangun datar hasil struct yang akan di buat
+
+-Nil => Biasanya di dalam abahsa pemograman lain, Object yang belum di inisialisasikan maka secara otomatis default 
+value nya adalah null atau Nil
+-Berbeda dengan Go di Golang Saat kita buat variable akan di buatkan default value nya
+- Tapi di golang ada juga data nil, yaitu data kosong
+-Nil Sendiri hanya bisa di gunakan di beberapa tipe data, seperti interface, function, map, slice, pointer dan chanel
